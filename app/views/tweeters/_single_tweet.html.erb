@@ -1,0 +1,24 @@
+<div class="col-12 border rounded-lg border-success p-3 mt-3">
+    <div>
+       <%= link_to "<i class='fa fa-calendar'></i>".html_safe+time_ago_in_words(tweet.created_at), tweet, :class => "text-white" %>
+    </div>
+    
+    <div class="user pt-3 h6">
+      <%= tweet.user.username %>
+    </div>
+    <%= image_tag (tweet.user.picture), :class => "picture", :style => "border-radius: 80%", :size => "120x100" %>
+    <%= tweet.content %>
+    <br/>
+    <div class="d-inline">
+        <%= link_to "<i class='fas fa-#{tweet.like_icon(current_user)} text-danger'></i>".html_safe, tweeter_likes_path(tweet), method: :post %>
+        <% tweet.likes.count %>
+    </div>
+    <div class="float-right">
+       <%= tweet.count_rt %>
+       <%= link_to "<i class='fas fa-retweet text-#{tweet.retweet_color}'></i>".html_safe, tweeter_retweet_path(tweet), method: :post %>
+       <% if tweet.is_retweet? %>
+          <%= link_to "retweet by@#{tweet.user.username}", tweet.tweet_ref, :class => "text-success" %>
+        <% end %>
+
+    </div>
+</div>

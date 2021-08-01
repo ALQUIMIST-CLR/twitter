@@ -1,0 +1,92 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.picture{
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%;
+    border-bottom-left-radius: 50% 50%;
+}
+
+.container .navbar-brand {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 30px;
+    padding-top: 20px;
+}
+
+.container .nav-item{
+    font-family: 'Bree Serif', serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.nav-item .user{
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.paginas .tweets{
+    font-family: 'Oxygen', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: honeydew;
+
+}
+
+.paginas .pag{
+    font-family: 'Bree Serif', serif;
+    color: green;
+    font-weight: 700;
+    font-size: 18px;
+    word-spacing: 5px;
+
+}
+
+.fa-calendar{
+    color: honeydew;
+    padding-right: 10px;
+}
+
+
+.titulo{
+    font-family: 'Kaushan Script', cursive;
+    font-size: 30px;
+}
+
+.subtitulo{
+    font-family: 'Bree Serif', serif;
+    font-weight: 400;
+}
+
+.subtitulo .actions{
+    font-family: 'Bree Serif', serif;
+}
+
+.mensaje{
+    color: white;
+    font-family: 'Bree Serif', serif;
+    font-size: 20px;
+
+}
+
+.show-tweet, .likes{
+    font-family: 'Bree Serif', serif;
+    font-weight: 400;
+    font-size: 25px;
+
+}
+
+.mensaje-tweet{
+    font-family: 'Oxygen', sans-serif;
+    font-style:oblique;
+    font-size: 20px;
+}
+
+.link{
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+

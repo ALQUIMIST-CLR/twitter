@@ -1,0 +1,21 @@
+<div class="paginas">   
+<div class=" col-12 py-3 px-5 mt-3 bg-dark">   
+   <% if user_signed_in? %>
+      <%= render 'tweeters/form', tweeter: @tweeter %>
+   <% end %>
+
+   <div class="tweets">
+   <% @tweeters.each do |tweet| %>
+       <%= render 'tweeters/single_tweet', tweet: tweet %>  
+   <% end %>
+   </div>
+</div>
+   <hr/>
+
+   <div class="pag col-md-4">
+     <%= paginate @tweeters %>
+     <%= link_to_next_page @tweeters, 'Mostrar más', :class => "text-success pb-5" %>
+   </div>
+
+</div>
+

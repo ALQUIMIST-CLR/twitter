@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p class="show-tweet">
+  <strong><%= @tweeter.user.username %> dice: </strong>
+  <div class="mensaje-tweet pb-3">
+     <%= @tweeter.content %>
+  </div>
+  <%= Time.now.strftime("%H:%M") %>
+  <%= I18n.l(Date.today, format: '%A, %d de %B de %Y') %>
+
+</p>
+
+<h3 class="likes pb-3"> Likes (<%= @tweeter.likes.count %>) </h3>
+
+<% @tweeter.liking_users.each do |user| %>
+   <%= image_tag(user.picture, class: "picture mb-3", size: "120x115") %>
+<% end %>
+
+<br/>
+<%= link_to 'Home', root_path, :class=> " link text-success" %>
+
