@@ -8,12 +8,21 @@
          </button>
          <div class="collapse navbar-collapse" id="navbarNav">
              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                     <%= link_to 'All Tweets', all_tweets_path, :class => "nav-link" %>
+                </li>
+
                 <% if user_signed_in? %>
+                     <% if current_user.admin %>
+                          <li class="nav-item pl-5">
+                             <%= link_to 'Admin', admin_root_path, :class => "nav-link" %>
+                          </li>
+                     <% end %>
                      <li class="nav-item">
                          <a class=" user nav-link h3 pt-5 pr-5"><%= link_to current_user.username, tweeters_path %></a>
                      </li>
                      <li class="nav-item pl-5">
-                         <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, :class => "nav-link" %>
+                         <%= link_to 'Cerrar sesión', destroy_user_session_path, :class => "nav-link" %>
                      </li>
                 <% else %>
                      <li class="nav-item">

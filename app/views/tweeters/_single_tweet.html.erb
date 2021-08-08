@@ -6,8 +6,23 @@
     <div class="user pt-3 h6">
       <%= tweet.user.username %>
     </div>
+
+    <% if user_signed_in? && current_user != tweet.user %>
+        <div>
+          <% if current_user.is_following?(tweet.user_id) %>
+          <%= link_to "<i class='fas fa-user-times text-danger'></i>".html_safe, users_follow_path(tweet.user_id), method: :post %>
+          <% else %>
+            <%= link_to "<i class='fas fa-user-plus' aria-hidden= 'true'></i>".html_safe, users_follow_path(tweet.user_id), method: :post %>
+          <% end %>
+        </div>
+    <% end %>
+
+
+
     <%= image_tag (tweet.user.picture), :class => "picture", :style => "border-radius: 80%", :size => "120x100" %>
-    <%= tweet.content %>
+    
+    <%= tweet.content.html_safe %>
+    
     <br/>
     <div class="d-inline">
         <%= link_to "<i class='fas fa-#{tweet.like_icon(current_user)} text-danger'></i>".html_safe, tweeter_likes_path(tweet), method: :post %>
