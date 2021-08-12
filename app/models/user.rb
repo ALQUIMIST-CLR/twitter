@@ -34,7 +34,7 @@ class User < ApplicationRecord
 
   def tweets_amount
      tweeters.count
-  end
+  end 
   
   def likes_amount
     likes.count
@@ -42,6 +42,11 @@ class User < ApplicationRecord
   
   def retweet_amount
      tweeters.where.not(rt_ref: nil).count
+  end
+
+  def self.authenticate(email, password)
+    user = User.find_for_authentication(email: email)
+    user&.valid_password?(password) ? user :nil
   end
 
 end
